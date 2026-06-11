@@ -3,6 +3,7 @@ import { StoreContext } from '../../context/StoreContext';
 import './Cart.css'
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { url } from '../../assets/assets';
 
 const Cart = () => {
     const navigate =useNavigate();
@@ -30,7 +31,7 @@ const Cart = () => {
                                 return (
                                     <div key={item._id}>
                                         <div className="cart-items-title cart-items-item">
-                                            <img src={"http://localhost:4000/image/"+item.image} alt="" />
+                                            <img src={`${url}/image/`+item.image} alt="" />
                                             <p>{item.name}</p>
                                             <p>{item.price}</p>
                                             <p>{CartItems[item._id]}</p>

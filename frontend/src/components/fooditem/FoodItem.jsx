@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { assets } from "../../assets/assets";
+import { assets, url } from "../../assets/assets";
 import "./FoodItem.css";
 import { StoreContext } from "../../context/StoreContext";
 
@@ -8,7 +8,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
   return (
     <div className="food-items">
       <div className="item-img">
-        <img src={"http://localhost:4000/image/"+image} alt="" />
+        <img src={`${url}/image/`+image} alt="" />
         {!CartItems[id] ? (
           <div className="item-white-img">
             <img

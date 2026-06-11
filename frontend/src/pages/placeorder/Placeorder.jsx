@@ -3,6 +3,7 @@ import axios from "axios"
 import { StoreContext } from '../../context/StoreContext'
 import "./Placeorder.css"
 import { useNavigate } from 'react-router-dom'
+import { url } from '../../assets/assets'
 
 const Placeorder = () => {
     const { gettotalAmount, food_list, token, CartItems } = useContext(StoreContext)
@@ -39,7 +40,7 @@ const Placeorder = () => {
             items: orderItem,
             amount: gettotalAmount() + 2
         }
-let response = await axios.post(`http://localhost:4000/api/order/place`, orderData, {
+let response = await axios.post(`${url}/api/order/place`, orderData, {
     headers: { token },
 });
 if (response.data.success) {

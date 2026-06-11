@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { assets } from "../../assets/assets";
+import { assets,url } from "../../assets/assets";
 import "./Add.css";
 import { useState } from "react";
 import axios from "axios";
@@ -32,7 +32,7 @@ const Add = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/food/add",
+        `${url}/api/food/add`,
         formData
       );
       console.log("Response:", response.data);

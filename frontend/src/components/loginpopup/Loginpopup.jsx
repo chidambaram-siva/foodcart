@@ -1,5 +1,5 @@
 import React, { useState , useContext } from "react";
-import { assets } from "../../assets/assets";
+import { assets, url } from "../../assets/assets";
 import "./Loginpopup.css";
 import axios from "axios";
 import { StoreContext } from '../../context/StoreContext';
@@ -26,7 +26,6 @@ const Loginpopup = ({ setShowLogin }) => {
 
   const submitLoginHandle = async (e) => {
     e.preventDefault();
-    let url = "http://localhost:4000";
 
     if (currState === "Login") {
       url += "/api/user/login";

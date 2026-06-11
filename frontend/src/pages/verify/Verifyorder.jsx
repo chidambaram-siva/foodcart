@@ -2,6 +2,7 @@ import React from 'react'
 import {  useNavigate, useSearchParams } from 'react-router-dom'
 import "./Verifyorder.css"
 import axios from 'axios'
+import { url } from '../../assets/assets'
 
 const Verifyorder = () => {
     const[searchparam,setSearchhparam]=useSearchParams()
@@ -10,7 +11,7 @@ const Verifyorder = () => {
     const navigate=useNavigate()
 
     const VerifyOrder =async(req,res)=>{
-      const response=await axios.post(`http://localhost:4000/api/order/place`,{success,orderId})
+      const response=await axios.post(`${url}/api/order/place`,{success,orderId})
       if(response.data.success){
         navigate('/myorder')
       } else{
