@@ -26,15 +26,15 @@ const Loginpopup = ({ setShowLogin }) => {
 
   const submitLoginHandle = async (e) => {
     e.preventDefault();
-
+    let newUrl;
     if (currState === "Login") {
-      url += "/api/user/login";
+       newUrl = `${url}/api/user/login`;
     } else {
-      url += "/api/user/register";
+      newUrl = `${url}/api/user/register`;
     }
 
     try {
-      const response = await axios.post(url, data);
+      const response = await axios.post(newUrl, data);
       if (response.data.success) {
         toast.success(response.data.message,{ autoClose: 500 })
         localStorage.setItem("token", response.data.token);
