@@ -17,7 +17,7 @@ const StoreContextProvider = (props) => {
     }
     if(token){
       await axios.post("http://localhost:4000/api/cart/add",{id}, {headers:{token}} )
-    }
+    } 
   }
   
   const removeItems=async(id)=>{

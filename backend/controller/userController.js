@@ -49,6 +49,7 @@ const registerUser = async(req,res)=>{
 
         const salt = await bcrypt.genSalt(10)
         const hashedPassword = await hash(password,salt)
+        //const hashedPassword = await bycrpt.hash(password,salt )  if hash is not imported on the bycrpt
 
         const newUser = new userModel({
             name : name,
