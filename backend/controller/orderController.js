@@ -6,7 +6,7 @@ import "dotenv/config";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 const placeOrder = async (req, res) => {
-  const frontend_url = "";
+  const frontend_url = "https://foodcart-mocha.vercel.app/";
 
   try {
     const newOrder = new orderModel({
