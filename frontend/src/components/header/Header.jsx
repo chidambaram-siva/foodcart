@@ -1,10 +1,9 @@
 import React from 'react'
 import "./Header.css"
-import {assets} from "../../assets/assets"
 
 const Header = () => {
   return (
-    <div className='header' style={{ backgroundImage: `url(${assets.header_img})`}}>
+    <div className='header'>
         <div className='header-content'>
             <h2>Order your favourite food here</h2>
             <p>Explore and order a variety of delicious meals, snacks, and beverages from local vendors. Whether you're craving spicy, sweet, or savory, we’ve got something for every taste. Fast delivery, easy ordering—your favorite food is just a click away!</p>
