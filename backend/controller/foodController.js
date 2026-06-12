@@ -11,12 +11,12 @@ const addFood = async (req, res) => {
         .status(400)
         .json({ success: false, message: "Image file is required" });
     }
-
+    const result = await cloudinary.uploader.upload(req.file.path);
     const food = new foodModel({
       name: req.body.name,
       description: req.body.description,
       price: req.body.price,
-      image: req.file.filename,
+      image: result.secure_url,
       category: req.body.category,
     });
 
@@ -43,8 +43,7 @@ const listFood = async (req, res) => {
 };
 const removeFood = async (req, res) => {
   try {
-    const deletes = await foodModel.findById(req.body.id);
-    fs.unlink(`/uploads/${deletes.image}`, () => {});
+
 
     const removes = await foodModel.findByIdAndDelete(req.body.id);
     res.json({ message: "item removed" });
