@@ -1,3 +1,4 @@
+import cloudinary from "../config/cloudinary.js";
 import foodModel from "../models/foodModels.js";
 import fs from "fs";
 
