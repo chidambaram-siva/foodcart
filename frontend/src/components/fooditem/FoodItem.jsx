@@ -8,7 +8,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
   return (
     <div className="food-items">
       <div className="item-img">
-        <img src={`${url}/image/`+image} alt="" />
+        <img src={image} alt="" />
         {!CartItems[id] ? (
           <div className="item-white-img">
             <img
