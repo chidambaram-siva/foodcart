@@ -349,4 +349,4 @@ export const food_list = [
     }
 ]
 
-export const url = 'https://foodcart-yzbx.onrender.com'
+export const url = 'http://localhost:4000'
